@@ -991,6 +991,31 @@ endif
 PRODUCT_VENDOR_PROPERTIES += ro.soc.manufacturer=Qualcomm
 PRODUCT_VENDOR_PROPERTIES += ro.soc.model=SM7250
 
+# From https://github.com/edgd1er/voenabler/blob/master/system.prop
+# Debug Options
+PRODUCT_PROPERTY_OVERRIDES += persist.dbg.ims_volte_enable=1
+PRODUCT_PROPERTY_OVERRIDES += persist.dbg.volte_avail_ovr=1
+PRODUCT_PROPERTY_OVERRIDES += persist.dbg.vt_avail_ovr=1
+PRODUCT_PROPERTY_OVERRIDES += persist.dbg.wfc_avail_ovr=1
+
+# Data Options
+# Commented this line out as it was reported to break WiFi calling on some carriers. Not even sure if it's required to begin with.
+PRODUCT_PROPERTY_OVERRIDES += persist.data.iwlan.enable=true
+PRODUCT_PROPERTY_OVERRIDES += persist.data.iwlan=1
+PRODUCT_PROPERTY_OVERRIDES += persist.data.iwlan.ipsec.ap=1
+
+# Radio Options
+PRODUCT_PROPERTY_OVERRIDES += persist.radio.volte.dan_support=true
+PRODUCT_PROPERTY_OVERRIDES += persist.radio.rat_on=combine
+PRODUCT_PROPERTY_OVERRIDES += persist.radio.data_ltd_sys_ind=1
+PRODUCT_PROPERTY_OVERRIDES += persist.radio.data_con_rprt=1
+PRODUCT_PROPERTY_OVERRIDES += persist.radio.calls.on.ims=1
+PRODUCT_PROPERTY_OVERRIDES += persist.radio.VT_ENABLE=1
+
+# Other Options
+PRODUCT_PROPERTY_OVERRIDES += persist.sys.cust.lte_config=true
+PRODUCT_PROPERTY_OVERRIDES += persist.rcs.supported=1
+
 #################################################################################
 # This is the End of device-common.mk file.
 # Now, Pickup other split device-common.mk files:
